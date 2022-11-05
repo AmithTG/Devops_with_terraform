@@ -1,0 +1,14 @@
+---
+ - hosts: webservers
+   tasks: 
+   - name: Install prerequisites
+     apt: name=python3-software-properties state=present
+     become: true
+
+   - name: Add deadsnakes repo
+     apt_repository: repo="ppa:deadsnakes/ppa"
+     become: true
+
+   - name: Install python
+     apt: name="python3.10-dev" state=present
+     become: true

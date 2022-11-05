@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+   - name: uninstall nodejs
+     apt:
+       name:
+         - nodejs
+         - vsftpd
+       state: absent

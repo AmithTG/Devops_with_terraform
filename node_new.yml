@@ -1,0 +1,6 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+   - name: install nodejs
+     apt: name=nodejs
